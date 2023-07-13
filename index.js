@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const cors = require('cors');
 
 // Middleware to parse JSON request body
 app.use(express.json());
+
+app.use(cors());
 
 // /videos endpoint
 app.get('/videos', (req, res) => {
